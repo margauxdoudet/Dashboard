@@ -1,0 +1,35 @@
+td,th{
+    text-align: center;
+    width:100px;
+}
+
+th {
+    font-family: Trebuchet MS;
+}
+
+#debug {
+  display: none;
+  text-align: center;
+}
+
+#canvas {
+  margin-top: 50px;
+  /*border: 2px solid blue;*/
+}
+
+#canvas1 {
+    /*border:2px solid red;*/
+}
+
+#goutte {
+    display: none;
+}
+
+#thermo {
+    display: none;
+}
+
+#caption {
+    font-family: Trebuchet MS;
+    caption-side: top;
+}

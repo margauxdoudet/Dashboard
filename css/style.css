@@ -1,0 +1,72 @@
+#div_temp_Last24Hours, #div_hum_Last24Hours {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+#div_temp_Last31Days, #div_temp_Last16Weeks, #div_temp_Last12Months, #div_hum_Last31Days, #div_hum_Last16Weeks, #div_hum_Last12Months  {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: none;
+}
+
+#t24h, #h24h {
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+#t31j, #t16s, #t12m, #h31j, #h16s, #h12m {
+  color: grey;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+#cardTemp, #cardHum {
+  margin-top: 1%;
+  margin-left: 5%;
+  width: 90%;
+}
+
+.infoIcon {
+  cursor: help;
+  float: right;
+  margin-right: -7px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 187px;
+    position: fixed;
+    left: 0;
+    background-color: #f5f6fa;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-right: 1px solid lightgrey;
+}
+
+
+.sidenav a {
+    padding: 6px 8px 6px 35px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2f3640;
+    display: block;
+}
+
+
+.sidenav a:hover {
+    color: #34495e;
+    text-decoration:none;
+}
+
+.main {
+    margin-left: 195px;
+    padding: 30px 20px;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}

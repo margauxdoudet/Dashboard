@@ -1,0 +1,28 @@
+.c_hum, .c_temp {
+    width: 70%;
+    height: 50%;
+}
+
+#div_hum_Last10Hours, #div_hum_Last10Days, #div_hum_Last10Weeks, #div_hum_Last10Months, #div_temp_Last10Hours, #div_temp_Last10Days, #div_temp_Last10Weeks, #div_temp_Last10Months {
+    display: none;
+}
+
+.span_h, .span_t, .infoIcon {
+    cursor: pointer;
+}
+
+.div_temp, .div_hum {
+    width: 500px;
+    height: 350px;
+    margin-left: 30%;
+}
+
+#h10s, #t10s {
+    color : black;
+    font-weight: bold;
+}
+
+#div_compa {
+    margin-bottom : 2%;
+    text-align: center;
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Statistiques</title>
+  <link href="images/logo_sansfond.png" rel="shortcut icon">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+
+  <script src="js/test.js"></script>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/chart.bundle.js"></script>
+  <script src="js/chartjs-plugin-datalabels.js"></script>
+  <script src="js/bootstrap-notify.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #34495e;">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo_sansfond.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Météo Dashboard
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Capteur
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Capteur 1</a>
+          <a class="dropdown-item" href="#">Capteur 2</a>
+          <a class="dropdown-item" href="#">Capteur 3</a>
+          <a class="dropdown-item" href="#">Capteur 4</a>
+          <a class="dropdown-item" href="#">Capteur 5</a>
+          <a class="dropdown-item" href="#">Capteur 6</a>
+          <a class="dropdown-item" href="#">Capteur 7</a>
+          <a class="dropdown-item" href="#">Tous les capteurs</a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+  <span class="navbar-text active">
+Il est : <span  id="div_horloge">
+</span>
+</nav>
+
+
+<div class="sidenav">
+    <a href="index.html">Accueil</a>
+    <a href="instant.html">Mesures instantannées</a>
+    <a href="#"><b>Statistiques</b></a>
+</div>
+
+<div class="main">
+<div id="contenu">
+  <div class="card" id="cardTemp">
+    <div class="card-header bg-light">
+      <i class="fas fa-thermometer-half"></i>
+      <b>Température</b> depuis :
+        <span id="t24h" onclick="display_tempGraph(1);">24 heures</span> •
+        <span id="t31j" onclick="display_tempGraph(2);">31 jours</span> •
+        <span id="t16s" onclick="display_tempGraph(3);">16 semaines</span> •
+        <span id="t12m" onclick="display_tempGraph(4);">12 mois</span>
+        <img src="images/information.png" alt="Information" width="24" height="24" class="infoIcon" onclick="tempInfo();">
+    </div>
+
+    <div class="card-body">
+      <div id="div_temp_Last24Hours">
+           <canvas id="temp_Last24Hours" width="800" height="250"></canvas>
+      </div>
+
+      <div id="div_temp_Last31Days">
+        <canvas id="temp_Last31Days" width="800" height="250"></canvas>
+      </div>
+
+      <div id="div_temp_Last16Weeks">
+        <canvas id="temp_Last16Weeks" width="800" height="250"></canvas>
+      </div>
+
+      <div id="div_temp_Last12Months">
+        <canvas id="temp_Last12Months" width="800" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="cardHum">
+    <div class="card-header bg-light">
+      <i class="fas fa-tint"></i>
+      <b>Humidité</b> depuis :
+        <span id="h24h" onclick="display_humGraph(1);">24 heures</span> •
+        <span id="h31j" onclick="display_humGraph(2);">31 jours</span> •
+        <span id="h16s" onclick="display_humGraph(3);">16 semaines</span> •
+        <span id="h12m" onclick="display_humGraph(4);">12 mois</span>
+        <img src="images/information.png" alt="Information" width="24" height="24" class="infoIcon" onclick="humInfo();">
+    </div>
+
+    <div class="card-body">
+      <div id="div_hum_Last24Hours">
+           <canvas id="hum_Last24Hours" width="800" height="250"></canvas>
+      </div>
+
+      <div id="div_hum_Last31Days">
+        <canvas id="hum_Last31Days" width="800" height="250"></canvas>
+      </div>
+
+      <div id="div_hum_Last16Weeks">
+        <canvas id="hum_Last16Weeks" width="800" height="250"></canvas>
+      </div>
+
+      <div id="div_hum_Last12Months">
+        <canvas id="hum_Last12Months" width="800" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="js/graphTemp.js"></script>
+  <script src="js/graphHum.js"></script>
+<script src="js/generation.js"></script>
+
+</div>
+</body>
+</html>

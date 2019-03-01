@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Accueil - Météo</title>
+  <link href="images/logo_sansfond.png" rel="shortcut icon">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <link rel="stylesheet" href="css/projet.css"/>
+
+  <script src="js/test.js"></script>
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/chart.bundle.js"></script>
+  <script src="js/chartjs-plugin-datalabels.js"></script>
+  <script src="js/bootstrap-notify.js"></script>
+  <script src="js/projet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #34495e;">
+    <a class="navbar-brand" href="#">
+      <img src="images/logo_sansfond.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Météo Dashboard
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Capteurs virtuels
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" onclick="display_name('sensors/D1');">Capteur D1</a>
+          <a class="dropdown-item" onclick="display_name('sensors/D2');">Capteur D2</a>
+          <a class="dropdown-item" onclick="display_name('sensors/D3');">Capteur D3</a>
+          <a class="dropdown-item" onclick="display_name('sensors/D4');">Capteur D4</a>
+          <a class="dropdown-item" onclick="display_name('sensors/D5');">Capteur D5</a>
+          <a class="dropdown-item" onclick="display_name('sensors/D6');">Capteur D6</a>
+          <a class="dropdown-item"onclick="display_name('sensors/D7');">Capteur D7</a>
+        </div>
+      </li>
+    </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Capteurs CSI
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" onclick="display_name('sensors/G1');">Capteur G1</a>
+            <a class="dropdown-item" onclick="display_name('sensors/G2');">Capteur G2</a>
+            <a class="dropdown-item" onclick="display_name('sensors/G3');">Capteur G3</a>
+            <a class="dropdown-item" onclick="display_name('sensors/G4');">Capteur G4</a>
+            <a class="dropdown-item" onclick="display_name('sensors/G5');">Capteur G5</a>
+            <a class="dropdown-item" onclick="display_name('sensors/G6');">Capteur G6</a>
+            <a class="dropdown-item"onclick="display_name('sensors/G7');">Capteur G7</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  <span class="navbar-text active">
+Il est : <span  id="div_horloge"></span>
+  </span>
+</nav>
+
+
+<div class="sidenav">
+    <a href="#"><b>Accueil</b></a>
+    <a href="instant.html">Mesures instantannées</a>
+    <a href="stats.html">Statistiques</a>
+</div>
+
+<div class="main"  id=body class=body>
+
+  <div id='debug' class="alert alert-warning" role="alert"></div>
+  <table id="tab" class="table table-striped">
+      <caption id='caption'>Historique des entrées (5 dernières minutes)</caption>
+      <tr id="tr">
+          <th scope="col">Date</th>
+          <th scope="col">Température en °C</th>
+          <th scope="col">Temps min en °C</th>
+          <th scope="col">Temps max en °C</th>
+          <th scope="col">Humidité en %</th>
+          <th scope="col">Humidité min en %</th>
+          <th scope="col">Humidité max en %</th>
+      </tr>
+  </table>
+
+  <div class=goutte>
+      <img id='goutte' src='images/goutte.png'>
+      <img id='thermo' src='images/thermo.png'>
+      <canvas id='canvas' width='280' height='200' ></canvas>
+      <canvas id='canvas1' witdh='280' height='200'></canvas>
+  </div>
+
+</div>
+</body>
+</html>
